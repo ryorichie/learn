@@ -1,5 +1,5 @@
 printing <- function(x) {
-    cat("\n\n")
+    cat("\n")
     cat(x)
     cat("\n")
 }
@@ -25,7 +25,7 @@ print(matrix[, c(2, 3)])
 
 # add rows and columns
 matrix <- cbind(matrix, c(27, 29, 31))
-matrix <- rbind(matrix, c("di", "atas", "bilangan", "prima"))
+matrix <- rbind(matrix, c(1,2,3,4))
 
 # removing rows and columns
 matrix <- matrix[-c(4), ]
@@ -41,3 +41,14 @@ printing("check the length of the matrix")
 print(length(matrix))
 
 printing("Loop Through Matrix")
+
+for (rows in 1:nrow(matrix)) {
+    for (columns in 1:ncol(matrix)) {
+        for (rows1 in 1:nrow(matrix)) {
+            for(columns1 in 1:ncol(matrix)) {
+                times_all_matrix <- matrix[rows, columns] * matrix[rows1, columns1]
+                print(paste(matrix[rows, columns], "X", matrix[rows1, columns1], "=", times_all_matrix))
+            }
+        }
+    }
+}

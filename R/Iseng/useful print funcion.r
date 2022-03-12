@@ -1,5 +1,5 @@
 printing <- function(x) {
-    cat("\n\n")
+    cat("\n")
     cat(x)
     cat("\n")
 }
