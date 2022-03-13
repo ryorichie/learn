@@ -24,8 +24,8 @@ printing("acessing multiple column")
 print(matrix[, c(2, 3)])
 
 # add rows and columns
-matrix <- cbind(matrix, c(27, 29, 31))
-matrix <- rbind(matrix, c(1,2,3,4))
+matrix <- cbind(matrix, c(29, 31, 37))
+matrix <- rbind(matrix, c(1, 2, 3, 4))
 
 # removing rows and columns
 matrix <- matrix[-c(4), ]
@@ -45,10 +45,16 @@ printing("Loop Through Matrix")
 for (rows in 1:nrow(matrix)) {
     for (columns in 1:ncol(matrix)) {
         for (rows1 in 1:nrow(matrix)) {
-            for(columns1 in 1:ncol(matrix)) {
+            for (columns1 in 1:ncol(matrix)) {
                 times_all_matrix <- matrix[rows, columns] * matrix[rows1, columns1]
                 print(paste(matrix[rows, columns], "X", matrix[rows1, columns1], "=", times_all_matrix))
             }
         }
     }
 }
+
+printing("combining 2 matrix")
+matrix1 <- matrix(c(41, 43, 47), nrow = 3)
+matrix <- cbind(matrix,matrix1)
+# matrix <- rbind(matrix,matrix1)
+print(matrix)
