@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "https://www.w3schools.com/r/r_factors.asp",
+            "request": "launch",
+            "url": "https://www.w3schools.com/r/r_factors.asp"
+        }
+    ]
+}
