@@ -1,5 +1,4 @@
-/
-/// Basic note
+//// Basic note
 
 /// How to create new cargo
 // cargo new hello_cargo
@@ -107,3 +106,5 @@ let guess: u32 = match guess.trim().parse() {
     Err(num) => continue,
 }; // swithc from expect call to match expression like cmp method
 
+
+//// Chapter 3
