@@ -107,4 +107,35 @@ let guess: u32 = match guess.trim().parse() {
 }; // swithc from expect call to match expression like cmp method
 
 
-//// Chapter 3
+//// Chapter 3 (Commong Programming Concept)
+/// Set of word that cannot use in rust
+// https://doc.rust-lang.org/book/appendix-01-keywords.html
+
+/// Variables and Mutability
+// by default variables are immutable
+let mut x = 5; // use mut to make variable mutable
+println!("The value of x is: {}", x);
+x = 6; // change variable value
+println!("Then value of x change to: {}", x);
+
+/// constants
+const SECOND_IN_A_DAY: u32 = 60 * 60 * 24;
+// you not allowed to use mut in constants
+// Constants aren’t just immutable by default—they’re always immutable
+// Constants can be declared in any scope, including the global scope, 
+// which makes them useful for values that many parts of code need to know about.
+
+/// shadowing
+// shadowing is redeclare variable with let
+// let keyword allow us to perform fer transformations on a value
+// it's different with mut. without mut we can't redeclare variable like this
+let x = 5;
+x = x + 1;
+
+// but this allowed
+let x = 5;
+let x = x + 1;
+
+
+/// Data types
+// rust is a statically syped language
