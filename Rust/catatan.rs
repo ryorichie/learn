@@ -167,4 +167,9 @@ let x = x + 1;
 // it's f32 and f64
 
 //** Numeric Operations
-//
+
+//** Boolean Type
+fn main() {
+    let t = true;
+    let f: bool = false;
+}
