@@ -1,13 +1,13 @@
 use std::io;
 
 fn main() {
-    let mut valuese = String::new();
+    let mut value = String::new();
     loop {
         println!("Please type something to be analyse");
 
-        io::stdin().read_line(&mut valuese).expect("Read error");
+        io::stdin().read_line(&mut value).expect("Read error");
 
-        let valuese: u32 = match valuese.trim().parse() {
+        let value: u32 = match value.trim().parse() {
             Ok(num) => num,
             Err(_) => {
                 println!("Please type a number");
@@ -15,6 +15,6 @@ fn main() {
             }
         };
 
-        println!("Your number is {}", valuese)
+        println!("Your number is {}", value);
     }
 }

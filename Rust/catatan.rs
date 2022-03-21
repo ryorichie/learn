@@ -139,3 +139,29 @@ let x = x + 1;
 
 /// Data types
 // rust is a statically syped language
+
+//*Scalar Type
+
+//**Integer Type (sined integer types start with i instead of u)
+// Length  Signed   Unsigned
+// 8-bit   i8       u8
+// 16-bit  i16      u16
+// 32-bit  i32      u32
+// 64-bit  i64      u64
+// 128-bit i128     u128
+// arch    isize    usize
+// Signed number just can be just negative or positive, and unsigned can be positive
+// Each signed variant can store numbers from -(2^n - 1) to 2^n - 1
+// we can write integer literals in any of forms below
+
+// Number literals  Example
+// Decimal          98_222
+// Hex              0xff
+// Octal            0o77
+// Binary           0b1111_0000
+// Byte (u8 only)   b'A'
+// Defaul rust integer type is i32
+
+//** FLoating-point Types
+// Rust also have floating-point numbers, which are numbers with decimal
+// it's f32 and f64
