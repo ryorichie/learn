@@ -165,3 +165,6 @@ let x = x + 1;
 //** FLoating-point Types
 // Rust also have floating-point numbers, which are numbers with decimal
 // it's f32 and f64
+
+//** Numeric Operations
+//
