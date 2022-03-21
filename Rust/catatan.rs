@@ -142,7 +142,7 @@ let x = x + 1;
 
 //*Scalar Type
 
-//**Integer Type (sined integer types start with i instead of u)
+//**Integer Type (sined integer types start with i instead of u) */
 // Length  Signed   Unsigned
 // 8-bit   i8       u8
 // 16-bit  i16      u16
@@ -162,14 +162,115 @@ let x = x + 1;
 // Byte (u8 only)   b'A'
 // Defaul rust integer type is i32
 
-//** FLoating-point Types
+//** FLoating-point Types */
 // Rust also have floating-point numbers, which are numbers with decimal
 // it's f32 and f64
 
-//** Numeric Operations
+//** Numeric Operations */
 
-//** Boolean Type
+//** Boolean Type */
 fn main() {
     let t = true;
     let f: bool = false;
 }
+
+//** Character Type */
+fn main() {
+    let c = 'z';
+    let z = 'ℤ';
+    let heart_eyed_cat = '😻';
+}
+
+//* CompoundType
+//** Tuple Type */
+// general way of grouping together number of value
+// Tuples have a fixed length: once declared, they cannot
+// grow or shrink in size.
+fn main() {
+    let tup = (500, 6.4, 1);
+
+    let (x, y, z) = tup; // break tup to 3 seperate variable (detructuring)
+
+    println!("The value of x is: {}", x);
+    println!("The value of y is: {}", y);
+    println!("The value of z is: {}", z);
+}
+
+// we can also access spesific tuple element using period
+fn main() {
+    let x: (i32, f64, u8) = (500, 6.4, 1);
+
+    let five_hundred = x.0;
+
+    let six_point_four = x.1;
+
+    let one = x.2;
+
+    println!("{}", five_hundred);
+    println!("{}", six_point_four);
+    println!("{}", one);
+}
+
+//** Array Type */
+// Unlike a tuple, every element of an array must have the same type.
+// A vector is a similar collection type provided by the standard 
+// library that is allowed to grow or shrink in size
+
+#![allow(unused)]
+fn main() {
+let months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"];
+}
+
+fn main() {
+let a: [i32; 5] = [1, 2, 3, 4, 5];
+let b = [3; 5]; // this aary contain 5 value that contain number 3
+let first = a[0];
+let second = b[2];
+
+println!("{}", first);
+println!("{}", second);
+}
+// Here, i32 is the type of each element. After the semicolon, the
+// number 5 indicates the array contains five elements.
+
+use std::io;
+
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+
+    println!("Please enter an array index.");
+
+    let mut index = String::new();
+
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index entered was not a number");
+
+    let element = a[index];
+
+    println!(
+        "The value of the element at index {} is: {}",
+        index, element
+    );
+}
+
+
+/// Function
+fn main() {
+    println!("Hello, world!");
+
+    another_function();
+}
+
+fn another_function() {
+    println!("Another function.");
+}
+
+// 
+//** Parameters*/

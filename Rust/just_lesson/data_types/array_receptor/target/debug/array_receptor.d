@@ -1,0 +1,1 @@
+C:\Users\Ryo\ Richie\Documents\GitHub\learn\Rust\just_lesson\data_types\array_receptor\target\debug\array_receptor.exe: C:\Users\Ryo\ Richie\Documents\GitHub\learn\Rust\just_lesson\data_types\array_receptor\src\main.rs
