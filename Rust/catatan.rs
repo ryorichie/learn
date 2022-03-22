@@ -271,6 +271,26 @@ fn main() {
 fn another_function() {
     println!("Another function.");
 }
-
-// 
+// another_function can be call in main function
+// rust doesn't care where you define your function
+ 
 //** Parameters*/
+fn main() {
+    another_function(5);
+}
+
+fn another_function(x: i32) {
+    println!("The value of x is: {}", x)
+}
+// in function declaration, there is parameter declare
+// we must declare the type of each parameter
+
+// when definin multiple parameters, separate the parameter
+// declaration with comma
+fn main (
+    print_labeled_measurement(5, 'h');
+)
+
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("The measurement is: {}{}", value, unit_label)
+}
