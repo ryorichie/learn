@@ -140,7 +140,9 @@ let x = x + 1;
 /// Data types
 // rust is a statically syped language
 
+
 //*Scalar Type
+
 
 //**Integer Type (sined integer types start with i instead of u) */
 // Length  Signed   Unsigned
@@ -162,17 +164,36 @@ let x = x + 1;
 // Byte (u8 only)   b'A'
 // Defaul rust integer type is i32
 
+
 //** FLoating-point Types */
 // Rust also have floating-point numbers, which are numbers with decimal
 // it's f32 and f64
 
+
 //** Numeric Operations */
+fn main() {
+	let sum = 5 + 10;
+	println!("{} is 5 + 10", sum );
+
+	let subtraction = 20001 - 20002;
+	println!("{} is 20001 - 20002", subtraction);
+
+	let multiplication = 99 * 99;
+	println!("{} is 99 * 99", multiplication);
+
+	let division = 100 / 33;
+	println!("{} is 100 / 33", division);
+
+	let remainder = 43 % 5;
+	println!("{} is 43 % 5", remainder);
+}
 
 //** Boolean Type */
 fn main() {
     let t = true;
     let f: bool = false;
 }
+
 
 //** Character Type */
 fn main() {
@@ -181,7 +202,9 @@ fn main() {
     let heart_eyed_cat = '😻';
 }
 
+
 //* CompoundType
+
 //** Tuple Type */
 // general way of grouping together number of value
 // Tuples have a fixed length: once declared, they cannot
@@ -210,6 +233,7 @@ fn main() {
     println!("{}", six_point_four);
     println!("{}", one);
 }
+
 
 //** Array Type */
 // Unlike a tuple, every element of an array must have the same type.
@@ -274,6 +298,7 @@ fn another_function() {
 // another_function can be call in main function
 // rust doesn't care where you define your function
  
+
 //** Parameters*/
 fn main() {
     another_function(5);
@@ -287,10 +312,90 @@ fn another_function(x: i32) {
 
 // when definin multiple parameters, separate the parameter
 // declaration with comma
-fn main (
-    print_labeled_measurement(5, 'h');
-)
+fn main () {
+    print_labeled_measurement(5, 'h')
+}
 
 fn print_labeled_measurement(value: i32, unit_label: char) {
     println!("The measurement is: {}{}", value, unit_label)
+}
+
+
+//** Statements and Expression */
+
+fn main() {
+    let y = 6; // Statement
+}
+// statements are instructions that perform some action and don't return value
+// expressions evaluate to a resulting value
+
+// Statements do not return values. Therefore, you can’t assign a let 
+// statement to another variable, as the following code tries to do; 
+fn main() {
+    let x = (let y = 6);
+}
+// you’ll get an error: you can't do x = y = 6
+// you can't run code above but, a new scope block in curly brackets is an expression
+fn main () {
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("The value of y is: {}", y);
+}
+// Expressuibs don't include ending semicolons, if you add it
+// it will become statement
+
+
+//** Function that return value */
+// Functions can return values to the code that calls them
+// to do it we must declare their type after an arrow
+fn five() -> i32 {
+    5 // it didn't have semicol because it's and expression
+}
+
+fn main() {
+    let x = five(); // it same with let x = 5
+
+    println!("THe value of x is: {}", x)
+}
+
+// Another example
+fn main () {
+    let x = plus_one(5);
+
+    println!("The value of x is: {}", x)
+}
+
+fn plus_one(x: i32) -> i32 {
+    x + 1  // don't put semicolon to an expression
+}
+
+
+/// Comments
+// This is Simple Comment
+// Then it become multiple line comment
+fn main() {
+    // This position more preferred
+    let lucky_number = 7; // You can't put it on code
+}
+
+
+/// Control Flow
+// ability to run code repeatedly while a condition is tru
+
+//** If Expression */
+fn main() {
+    let mut number = 5;
+
+    if number < 5 {
+        number = number + 1;
+        main();
+        println!("{} condition was true", number);
+    } else {
+        number = number - 1;
+        main();
+        println!("{} Condition was false", number);
+    }
 }
