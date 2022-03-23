@@ -344,6 +344,7 @@ fn main() {
 fn main() {
     let x = (let y = 6);
 }
+
 // you’ll get an error: you can't do x = y = 6
 // you can't run code above but, a new scope block in curly brackets is an expression
 fn main () {
@@ -415,7 +416,7 @@ fn main () {
     }
 }
 
-// Multiple condition
+//** Multiple condition */
 fn main () {
     let number = 6;
 
@@ -454,7 +455,7 @@ fn main() {
     }
 }
 
-// loop with break
+//** loop with break */
 fn main() {
     let mut count = 0;
     'counting_up: loop {
@@ -476,4 +477,64 @@ fn main() {
     }
     println!("End count = {}", count);
 }
+// if you have loops in loop, break and continue apply to the innermost loop
 
+//** Returning value from loop */
+fn main() {
+     let mut counter = 0;
+
+     let result = loop {
+         counter += 1;
+        
+         println!("{}", counter);
+         if counter == 10 {
+             break counter * 2;
+         }
+     }; // it have semicol, because it a statement
+
+     println!("The result is {}", result);
+}
+
+
+//** Conditional loop with while */
+fn main() {
+    let mut number = 300000;
+
+    while number != 0 {
+        println!("{}!", number);
+
+        number -= 1
+    }
+
+    println!("LIFTOFF!!");
+}
+
+//** Fpr Loop */
+// this is while loop
+fn main() {
+    let a = [10,20,30,40,50];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("The value is : {}", a[index]);
+
+        index += 1
+    }
+}
+
+// this is for loop
+fn main() {
+    let a = [10,20,30,40,50];
+
+    for element in a {
+        println!("the value is: {}", element)
+    }
+} // for loop more safe and faster then while
+
+// countdown in for loop
+fn main() {
+    for number in (1..3000000).rev() {
+        println!("{}!", number);
+    }
+    println!("LIFTOFF!");
+}
