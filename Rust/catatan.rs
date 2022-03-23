@@ -321,6 +321,15 @@ fn print_labeled_measurement(value: i32, unit_label: char) {
 }
 
 
+fn main() {
+    let y = {
+        let x = 3;
+        x + 1
+        let y = 20;
+    };
+
+    println!("The value of y is: {}", y);
+}
 //** Statements and Expression */
 
 fn main() {
@@ -328,6 +337,7 @@ fn main() {
 }
 // statements are instructions that perform some action and don't return value
 // expressions evaluate to a resulting value
+// function is also statements // expression can be part of statement
 
 // Statements do not return values. Therefore, you can’t assign a let 
 // statement to another variable, as the following code tries to do; 
@@ -344,7 +354,7 @@ fn main () {
 
     println!("The value of y is: {}", y);
 }
-// Expressuibs don't include ending semicolons, if you add it
+// Expression don't include ending semicolons, if you add it
 // it will become statement
 
 
@@ -449,17 +459,21 @@ fn main() {
     let mut count = 0;
     'counting_up: loop {
         println!("count = {}", count);
-        let mut remaining = 10
+        let mut remaining = 10;
 
         loop {
-            println("remaining = {}", remaining);
+            println!("remaining = {}", remaining);
             if remaining == 9 {
                 break;
             }
             if count == 2 {
                 break 'counting_up;
             }
-            remaining -= 1
+            remaining -= 1;
         }
+
+        count += 1;
     }
+    println!("End count = {}", count);
 }
+
