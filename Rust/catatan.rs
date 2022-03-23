@@ -390,12 +390,76 @@ fn main() {
     let mut number = 5;
 
     if number < 5 {
-        number = number + 1;
-        main();
         println!("{} condition was true", number);
     } else {
-        number = number - 1;
-        main();
         println!("{} Condition was false", number);
+    }
+} // the condition must be a bool
+
+// example
+fn main () {
+    let number = 3;
+
+    if number != 0 {
+        println!("numbers isn't zeri")
+    }
+}
+
+// Multiple condition
+fn main () {
+    let number = 6;
+
+    if number % 4 == 0 {
+        println!("number is divisible by 4");
+    } else if number % 3 == 0 {
+        println!("number is divisible by 3");
+    } else if number % 2 == 0 {
+        println!("number is divisible by 2");
+    } else {
+        println!("number is just divisible by 1");
+    }
+} // rust just execute first true block condition
+
+// Using if in a let statement
+fn main () {
+    let condition = true;
+    let number = if condition {5} else {6};
+
+    println!("The value of number is {}", number);
+}
+
+// both first and second arm need to be same type
+fn main() {
+    let condition = true;
+
+    let number = if condition { 5 } else { "six" };
+
+    println!("The value of number is: {}", number);
+} // this code will print error
+
+// repetition with loops (loop, while, and for)
+fn main() {
+    loop {
+        println!("Again")
+    }
+}
+
+// loop with break
+fn main() {
+    let mut count = 0;
+    'counting_up: loop {
+        println!("count = {}", count);
+        let mut remaining = 10
+
+        loop {
+            println("remaining = {}", remaining);
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1
+        }
     }
 }
