@@ -498,7 +498,7 @@ fn main() {
 
 //** Conditional loop with while */
 fn main() {
-    let mut number = 300000;
+    let mut number = 30000;
 
     while number != 0 {
         println!("{}!", number);
@@ -533,7 +533,7 @@ fn main() {
 
 // countdown in for loop
 fn main() {
-    for number in (1..3000000).rev() {
+    for number in (1..300000).rev() {
         println!("{}!", number);
     }
     println!("LIFTOFF!");
