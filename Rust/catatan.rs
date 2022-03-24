@@ -5,7 +5,7 @@
 
 
 /// Run your code cargo
-// ./target/debug/hello_cargo
+// .target/debug/hello_cargo
 
 
 /// Cargo summary
@@ -533,7 +533,7 @@ fn main() {
 
 // countdown in for loop
 fn main() {
-    for number in (1..300000).rev() {
+    for number in 1..10 {
         println!("{}!", number);
     }
     println!("LIFTOFF!");
