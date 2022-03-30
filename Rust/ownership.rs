@@ -76,7 +76,7 @@ fn main() {
 
     takes_ownership(s);             // s's value moves into the function...
                                     // ... and so is no longer valid here
-    
+    println!("{}", s);
     let x = 5;                      // x comes into scope
 
     makes_copy(x);                  // x would move into the function,
@@ -161,7 +161,7 @@ fn calculate_length(s: &String) -> usize { // s is a reference to a String
 
 
   /** Try to modify a borrowed value */
-  fn main() {
+fn main() {
     let s = String::from("hello");
 
     change(&s);
@@ -175,7 +175,7 @@ fn change(some_string: &String) {
 fn main() {
     let mut s = String::from("hello");
 
-    change(&mut s); /** It change s value */
+    change(&mut s); //It change s value
     println!("{}", s);
 }
 
