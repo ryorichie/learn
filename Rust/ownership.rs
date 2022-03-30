@@ -145,7 +145,7 @@ fn calculate_length(s: String) -> (String, usize) {
 }
 
 
-//** References and Borrowings */
+///** References and Borrowings */
 fn main() {
     let s1 = String::from("hello");
 
@@ -214,3 +214,173 @@ fn main() {
 
     println!("{}, {}, and {}", r1, r2, r3);
 }
+
+
+// reference scope starts from it introduce and continue through the last time that references is used
+fn main() {
+    let mut s = String::from("hello");
+
+    let r1 = &s; // no problem
+    let r2 = &s; // no problem
+    println!("{} and {}", r1, r2); 
+    // variables r1 and r2 will not be used after this point
+
+    let r3 = &mut s; // no problem
+    println!("{}", r3);
+}
+
+
+//** Dangling References */
+fn main() {
+    let reference_to_nothing = dangle();
+}
+
+fn dangle() -> &String { // dangle returns a reference to a String
+
+    let s = String::from("hello"); // s is a new String
+
+    &s // we return a reference to the String, s
+} // Here, s goes out of scope, and is dropped. Its memory goes away.
+  // Danger!
+
+  /** after dangle finished, s will be deallocated. when we tried to 
+   * reference it, reference would be pointing to an invalid string
+   */
+
+//** Here's the solution. just return string directly */
+fn main() {
+    let string = no_dangle();
+}
+
+fn no_dangle() -> String {
+    let s = String::from("hello");
+
+    s
+}
+
+//** Reference Recap */
+/**At any given time, you can have either one mutable 
+ * reference or any number of immutable references.
+ * References must always be valid. */
+
+
+ ///** The Slice Type */
+ /// Slices let you reference a contiguous sequence of elements 
+ /// in a collection rather than the whole collection. A slice is
+ ///  a kind of reference, so it does not have ownership.
+ 
+ //** Example */
+ fn main() {
+    let mut s = String::from("hello world");
+
+    let word = first_word(&s); // word will get the value 5
+
+    s.clear(); // this empties the String, making it equal to ""
+
+    println!("{}", word);    // word still has the value 5 here, but there's no more string that
+    // we could meaningfully use the value 5 with. word is now totally invalid!
+}
+ fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+
+    s.len()
+}
+
+fn second_word(s: &String) -> (usize, usize) {
+
+}
+//** Stromg Slices */
+// We create slices using a range within brackets by specifying [starting_index..ending_index]
+fn main() {
+    let s = String::from("hello world");
+
+    let hello = &s[0..5];
+    let world = &s[6..11];
+}
+
+/** With Rust’s .. range syntax, if you want to start at index zero, you can drop the
+ * value before the two periods. In other words, these are equal: */
+ fn main() {
+     let s = String::from("hello");
+
+     let slice = &s[0..2];
+     let slice = &s[..2];
+ }
+
+ /** By the same token, if your slice includes the last byte of the String,
+  * you can drop the trailing number. That means these are equal: */
+  fn main() {
+      let s = String::from("hello");
+
+      let len = s.len()
+
+      let slice = &s[3..len];
+      let slice = &s[3..];
+  }
+
+/** You can also drop both values to take a slice of the entire string */
+fn main() {
+    let s = String::from("hello")
+
+    let len = s.len();
+
+    let slice = &s[0..len];
+    let slice = &s[..];
+}
+// String slice range indices must occur at valid UTF-8 character
+
+/** Example 2 */
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}
+fn main() {
+    let my_string = String::from("hello world");
+
+    // `first_word` works on slices of `String`s, whether partial or whole
+    let word = first_word(&my_string[0..6]);
+    println!("{}", word);
+    let word = first_word(&my_string[..]);
+    println!("{}", word);
+    // `first_word` also works on references to `String`s, which are equivalent
+    // to whole slices of `String`s
+    let word = first_word(&my_string);
+    println!("{}", word);
+
+    let my_string_literal = "hello world";
+
+    // `first_word` works on slices of string literals, whether partial or whole
+    let word = first_word(&my_string_literal[0..6]);
+    println!("{}", word);
+    let word = first_word(&my_string_literal[..]);
+    println!("{}", word);
+
+    // Because string literals *are* string slices already,
+    // this works too, without the slice syntax!
+    let word = first_word(my_string_literal);
+    println!("{}", word);
+}
+
+fn main() {
+    let mut s = String::from("hello world");
+
+    let word = first_word(&s);
+
+    s.clear(); //error;
+
+    println!("the first word is: {}", word);
+}
+

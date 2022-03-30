@@ -155,6 +155,11 @@ let x = x + 1;
 // Signed number just can be just negative or positive, and unsigned can be positive
 // Each signed variant can store numbers from -(2^n - 1) to 2^n - 1
 // we can write integer literals in any of forms below
+/**
+ * Additionally, the isize and usize types depend on the architecture of the computer your
+ * program is running on, which is denoted in the table as “arch”: 64 bits if you’re on a 
+ * 64-bit architecture and 32 bits if you’re on a 32-bit architecture.
+ */
 
 // Number literals  Example
 // Decimal          98_222
