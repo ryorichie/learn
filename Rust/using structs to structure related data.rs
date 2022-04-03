@@ -71,7 +71,31 @@ fn main() {
     let mut andres_wijaya = User {
         email:String::from("srangga632@gmail.com"),
         username: String::from("Andres Wijaya"),
-        ..ryo_richie
+        ..ryo_richie /** if we move string too from ryo richie, we can no longer use it. but it
+        implement copy trait to bool and integer value, so it's safe */
     };
-    println!("{}", andres_wijaya.username);
+    println!("{}", andres_wijaya.active);
 }
+
+//** Using Tuple Structs without Named Fields to Create Different Types */
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+fn main() {
+    let balck = Color(0,0,0);
+    let origin = Point(0,0,0);
+}
+/** Black and origin values are different types, becauese they're instances of different tuple structs
+ * even though the fields within struct have same type */
+
+//** Unit-Like Structs Without Any Fields */
+/** You can also defini sructs that don't have any fields!, these are called unit-like structs
+ * Unit-like structs can be useful when you need to imolement a trait on some type but don't have
+ * any data that you want to store in the type itself */
+struct AlwaysEqual; // without curly brackets or parentheses
+
+fn main() {
+    let subject = AlwaysEqual;
+}
+
+///** An Example Program Using Structs */
