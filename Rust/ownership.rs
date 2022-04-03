@@ -335,6 +335,17 @@ fn main() {
 }
 // String slice range indices must occur at valid UTF-8 character
 
+//** String literal are slices */
+let s = "Hello, world!";
+/** The type of s here is &str: it’s a slice pointing to that specific
+ * point of the binary. This is also why string literals are immutable;
+ * &str is an immutable reference. */
+
+/** String Slices as Parameters */
+fn first_word(s: &String) -> &str {} // rather use this
+fn first_word(s: &str) -> &str {}
+
+
 /** Example 2 */
 fn first_word(s: &str) -> &str {
     let bytes = s.as_bytes();
@@ -384,3 +395,11 @@ fn main() {
     println!("the first word is: {}", word);
 }
 
+//** Other Slices */
+fn main() {
+    let a = [1,2,3,4,5,6];
+
+    let slice = &a[1..3];
+
+    assert_eq!(slice, &[2,3]);
+}
