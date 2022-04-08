@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch java_coment",
+            "request": "launch",
+            "mainClass": "java_coment",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch test_coment",
+            "request": "launch",
+            "mainClass": "test_coment",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch printmethod",
+            "request": "launch",
+            "mainClass": "printmethod",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch exercise1",
+            "request": "launch",
+            "mainClass": "exercise1",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "Main",
