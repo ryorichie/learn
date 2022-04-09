@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch declaring_variable",
+            "request": "launch",
+            "mainClass": "declaring_variable",
+            "projectName": "learn_27cda1af"
+        },
+        {
+            "type": "java",
             "name": "Launch java_coment",
             "request": "launch",
             "mainClass": "java_coment",
