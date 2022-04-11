@@ -2,6 +2,118 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch java_method",
+            "request": "launch",
+            "mainClass": "java_method",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_arrays",
+            "request": "launch",
+            "mainClass": "java_arrays",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_break",
+            "request": "launch",
+            "mainClass": "java_break",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_for_loop",
+            "request": "launch",
+            "mainClass": "java_for_loop",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_dowhile_loop",
+            "request": "launch",
+            "mainClass": "java_dowhile_loop",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_while_loop",
+            "request": "launch",
+            "mainClass": "java_while_loop",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch Java_switch",
+            "request": "launch",
+            "mainClass": "Java_switch",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_ifelse_shorthand",
+            "request": "launch",
+            "mainClass": "java_ifelse_shorthand",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_if_else",
+            "request": "launch",
+            "mainClass": "java_if_else",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_booleans",
+            "request": "launch",
+            "mainClass": "java_booleans",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_math",
+            "request": "launch",
+            "mainClass": "java_math",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_string",
+            "request": "launch",
+            "mainClass": "java_string",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_operator",
+            "request": "launch",
+            "mainClass": "java_operator",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_type_casting",
+            "request": "launch",
+            "mainClass": "java_type_casting",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch data_types",
+            "request": "launch",
+            "mainClass": "data_types",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch declaring_variable",
+            "request": "launch",
+            "mainClass": "declaring_variable",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
             "name": "Launch declaring_variable",
             "request": "launch",
             "mainClass": "declaring_variable",
