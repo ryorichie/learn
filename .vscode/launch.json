@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch java_OOP",
+            "request": "launch",
+            "mainClass": "java_OOP",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch fib",
+            "request": "launch",
+            "mainClass": "fib",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch java_recursion",
+            "request": "launch",
+            "mainClass": "java_recursion",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
             "name": "Launch java_method",
             "request": "launch",
             "mainClass": "java_method",
