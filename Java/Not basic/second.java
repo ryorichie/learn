@@ -4,3 +4,4 @@ public class second {
         System.out.println(myObj.x);
     }
 }
+ 

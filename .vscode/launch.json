@@ -2,6 +2,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Constructor",
+            "request": "launch",
+            "mainClass": "Constructor",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch second",
+            "request": "launch",
+            "mainClass": "second",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "car.Main",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch Maen",
+            "request": "launch",
+            "mainClass": "Maen",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
+            "name": "Launch Multiple_Attributes",
+            "request": "launch",
+            "mainClass": "Multiple_Attributes",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
             "name": "Launch java_OOP",
             "request": "launch",
             "mainClass": "java_OOP",
