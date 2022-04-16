@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MyPackageClass",
+            "request": "launch",
+            "mainClass": "MyPackageClass",
+            "projectName": "learn_c61e4af"
+        },
+        {
+            "type": "java",
             "name": "Launch Constructor",
             "request": "launch",
             "mainClass": "Constructor",
