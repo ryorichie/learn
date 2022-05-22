@@ -12,8 +12,6 @@ log_values[c(1)] <- FALSE # change value of a vector
 # print(log_values) # nolint
 # print(numbers1) # nolint
 # print(numbers2) # nolint
-# print(fruits) # nolint
+print(fruits) 
 # print(numbers[22]) # nolint
 
-numbers4 <- seq(from = 0, by = 0.1, to = 30) #may not be sorted
-print(numbers4)
