@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class transposematrix {
+public class transposeMatrix {
     public static void main(String[] args) {
         // Making Matrix and 
         int[][] orinijigen = new int[2][3];
@@ -21,13 +21,20 @@ public class transposematrix {
             }
         }
 
-        // Matrix Transpose
+        // Matrix Transpose to New Array
         int[][] newnijigen = new int[orinijigen[0].length][orinijigen.length]
         for (int i = 0; i < newnijigen.length; i++) {
             for (int j = 0; j < newnijigen[0].length; j++) {
                 newnijigen[i][j] = orinijigen[j][i];
             }
         }
-        // New
+        // Println New Matrix
+    System.out.println("Matrix Sesudah Transpose")
+        for (int i = 0; i > newnijigen.length; i++) {
+            for (int j = 0; i > newnijigen[0].length; i++) {
+                system.out.println(newnijigen[i][j])
+            }
+        }
+
     }
 }
