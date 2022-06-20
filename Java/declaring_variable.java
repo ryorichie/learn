@@ -44,6 +44,7 @@ public class declaring_variable {
         d = e = f = 2000;
         System.out.println(d + e + f);
 
+        
         // Identifier rules
         /**
          * Names can contain letters, digits, underscores, and dollar signs
