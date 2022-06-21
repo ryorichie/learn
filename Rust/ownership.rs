@@ -21,7 +21,7 @@ fn main() {
     // The double colon :: operator allows us
     // to namespace this particular from function under the String type
 
-    // String type manages data allocated on the heap and can stone an
+    // String type manages data allocated on the heap and can store an
     // amount of the text that is uknown to us at compile time
 
     s.push_str(", worlds!");
@@ -190,7 +190,7 @@ fn change(some_string: &mut String) {
     let mut s = String::from("hello");
 
     let r1 = &mut s;
-    let r2 = &mut s;
+    let r2 = &mut s; //Error
 
     println!("{}, {}", r1, r2);
 }
@@ -267,7 +267,7 @@ fn no_dangle() -> String {
  ///** The Slice Type */
  /// Slices let you reference a contiguous sequence of elements 
  /// in a collection rather than the whole collection. A slice is
- ///  a kind of reference, so it does not have ownership.
+ /// a kind of reference, so it does not have ownership.
  
  //** Example */
  fn main() {
@@ -295,7 +295,7 @@ fn no_dangle() -> String {
 fn second_word(s: &String) -> (usize, usize) {
 
 }
-//** Stromg Slices */
+//** String Slices */
 // We create slices using a range within brackets by specifying [starting_index..ending_index]
 fn main() {
     let s = String::from("hello world");
@@ -320,8 +320,8 @@ fn main() {
 
       let len = s.len()
 
-      let slice = &s[3..len];
-      let slice = &s[3..];
+      let slice = &s[3..len];       // same
+      let slice = &s[3..];          // same
   }
 
 /** You can also drop both values to take a slice of the entire string */
@@ -393,6 +393,18 @@ fn main() {
     s.clear(); //error;
 
     println!("the first word is: {}", word);
+}
+
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+
+    s.len()
 }
 
 //** Other Slices */

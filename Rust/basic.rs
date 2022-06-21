@@ -78,7 +78,7 @@ match guess.cmp(&secret_number) { //this code is comparing guess with secret_num
     Ordering::Less => println!("Too small!"),
     Ordering::Greater => println!("Too big!"),
     Ordering::Equal => println!("You win!"),
-} // match expression i use to decide wha to do next vased on which variant of
+} // match expression i use to decide what to do next based on which variant of
 // ordering was returned with values in guess, this match is like alternative if else
 
 
@@ -167,7 +167,7 @@ let x = x + 1;
 // Octal            0o77
 // Binary           0b1111_0000
 // Byte (u8 only)   b'A'
-// Defaul rust integer type is i32
+// Default rust integer type is i32
 
 
 //** FLoating-point Types */
@@ -222,6 +222,10 @@ fn main() {
     println!("The value of x is: {}", x);
     println!("The value of y is: {}", y);
     println!("The value of z is: {}", z);
+
+    let samehada = tup.1;
+
+    println!("samehada sama dengan {}", samehada);
 }
 
 // we can also access spesific tuple element using period
@@ -417,7 +421,7 @@ fn main () {
     let number = 3;
 
     if number != 0 {
-        println!("numbers isn't zeri")
+        println!("numbers isn't zero")
     }
 }
 
@@ -514,7 +518,7 @@ fn main() {
     println!("LIFTOFF!!");
 }
 
-//** Fpr Loop */
+//** For Loop */
 // this is while loop
 fn main() {
     let a = [10,20,30,40,50];
@@ -542,4 +546,18 @@ fn main() {
         println!("{}!", number);
     }
     println!("LIFTOFF!");
+}
+
+fn main() {
+    let mut s: String = String::from("hello");
+
+    let r1: &String = &s;
+    let r2: &String = &s;
+
+    println!("{}, {}", r1, r2);
+
+    let r3: &mut String = &mut s;
+    println!("{}", r3); // this will be error if we call r1 and r2 again
+
+    // println!("{}, {}", r1, r2); 
 }

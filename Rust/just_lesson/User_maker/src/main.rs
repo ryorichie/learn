@@ -1,0 +1,7 @@
+struct User {
+
+}
+
+fn main() {
+    
+}
