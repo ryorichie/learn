@@ -59,6 +59,13 @@ struct User {
 }
 
 fn main() {
+    let default = User {
+        email: String::from("company&email.com"),
+        username: String::from("default"),
+        active: true,
+        sign_in_count: 1, 
+    };
+
     let mut ryo_richie = User {
         email: String::from("ryorichie@gmail.com"),
         username: String::from("ryorichie"),
@@ -71,7 +78,7 @@ fn main() {
     let mut andres_wijaya = User {
         email:String::from("srangga632@gmail.com"),
         username: String::from("Andres Wijaya"),
-        ..ryo_richie /** if we move string too from ryo richie, we can no longer use it. but it
+        ..default /** if we move string too from default, we can no longer use it. but it
         implement copy trait to bool and integer value, so it's safe */
     };
     println!("{}", andres_wijaya.active);
@@ -188,7 +195,11 @@ fn main() {
 /** Method is similar to function, but they're defined 
  * within the context of a struct(enum or trait object),
  * their first parameter is always self, which represents
- * the instance of the struct the method is being called on */
+ * the instance of the struct the method is being called on
+ * Method is a lot organize than function
+ * calling different between method and function
+ * Method: takenvariable.method(optionalsecondvariable) 
+ * Function funtion(takenvariable)*/
 
 //** Defining Method */
 #[derive(Debug)]
@@ -210,7 +221,7 @@ fn main() {
         height: 50,
     };
 
-    // let rect2: (u32, u32) = (40,50); you can replace struct with tupple
+    // let rect2: (u32, u32) = (40,50); you can't replace struct with tupple
 
     println!(
         "The are of the rectangle is {} square pixels,
@@ -285,6 +296,7 @@ fn main() {
 /** All functions that defined in impl block are associated funtion
  * We can define it without self as first parameter then it didn't need
  * instance of the type to wotk with. it's like String::from
+ * associated function is method withoud self parameter
  */
 
  // Example
@@ -304,10 +316,19 @@ impl Rectangle {
     }
  }
 
+fn buildrectangle (width: u32, height: u32) -> Rectangle {
+    Rectangle {
+        width,
+        height,
+    }
+}
+
 fn main() {
-    let square2 = Rectangle::square(2);
+    let square2 = Rectangle::square(2); // we use :: syntax to call associated function
+    let rect1 = buildrectangle(12, 12);
 
     println!("This square is {:#?}", square2);
+    println!("Rectangle that i build is {:#?}", rect1)
 }
 
  //** Multiple impl Blocks */
