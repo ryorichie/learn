@@ -127,6 +127,8 @@ fn main() {
 
     let rect1 = (30, 50);
 
+    println!("{}", rect1.1); // Accessing Tuple
+
     println!(
         "The area of the ractangle is {} square pixels.",
         area(rect1)
@@ -137,7 +139,7 @@ fn main() {
     }
 }
 
-// Refactirubg with struct: Adding more meaning
+// Refactoring with struct: Adding more meaning
 struct Rectangle {
     width: u32,
     heigth: u32,
@@ -325,14 +327,14 @@ fn buildrectangle (width: u32, height: u32) -> Rectangle {
 
 fn main() {
     let square2 = Rectangle::square(2); // we use :: syntax to call associated function
-    let rect1 = buildrectangle(12, 12);
+    let rect1 = buildrectangle(12, 12); // impl is like function
 
     println!("This square is {:#?}", square2);
     println!("Rectangle that i build is {:#?}", rect1)
 }
 
  //** Multiple impl Blocks */
- /** Struct allowed multiple imple block */
+ /** Struct allowed multiple impl block */
 struct Rectangle {
    width: u32,
    height: u32,
