@@ -3,6 +3,13 @@
 use crate::garden::vegetables::Asparagus;
 pub mod garden;
 
+// bring rand package defintions into the scope of our packages
+use rand::Rng;
+
+// Bringing structs, enums, exc except module
+use std::collections::HashMap;
+/** it's idiomatic to specify full path on this */
+
 fn main() {
     println!("Hello, world!");
     /** a package is one or more crates that provide a set of functionalitty
@@ -36,4 +43,15 @@ fn main() {
     // Using vegetables submodule
     let plant = Asparagus {};
     println!("I'm growing {:?}", plant);
+
+    // calling hashmap
+    let mut map = HashMap::new();
+    map.insert(1, 2);
+
+    // Using rand
+    let secret_number = rand::thread_rng().gen_range(1..101);
+    fn function2() -> io::Result<()> {
+        // --snip--
+        Ok(())
+    }
 }

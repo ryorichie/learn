@@ -1,7 +1,8 @@
+"problems.decorations.enabled": false,
 ////** Defining Enum */
 /// Enums are a way of defining custom data types is different
 ///  * way than you do with structs
-"problems.decorations.enabled": false,
+
 enum IpAddrKind {
     V4,
     V6,
