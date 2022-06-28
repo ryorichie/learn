@@ -73,4 +73,5 @@ fn main() {
     }
     // Other Binary Crate define on src/bin
     
+    println!("Test Gitignore");
 }
