@@ -68,6 +68,25 @@ fn main() {
         SpreadsheetCell::Int(3),
         SpreadsheetCell::Text(String::from("blue")),
         SpreadsheetCell::Float(10.12),
-    ]
+    ];
 
+
+    /// Storicng UTF-8 Encoded Text with String
+    // Creating empty new String
+    let mut s = String::new();
+    let data = "initial contents";
+    let s = data.to_string(); // converting data to string
+    let s = "initial contents".to_string(); // same as above
+    let s = String::from("Initial contents");
+
+    // Updating String
+    let mut up = String::from("foo");
+    up.push_str("bar"); // takes sring slice
+    // .push_str don't take ownership
+    let mut s1 = String::from("foo");
+    let s2 = "bar;";
+    s1.push_str(s2);
+    println!("s2 is {}", s2);
+    // Adding character
+    let mut lol = Sring::from("lol");
 }
