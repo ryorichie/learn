@@ -3,6 +3,8 @@
 #[allow(unused_variables)]
 #[allow(unused_mut)]
 use core::prelude::v1;
+use std::{collections::HashMap, vec};
+use unicode_segmentation::UnicodeSegmentation;
 
 fn main() {
     #![allow(unused_variables)]
@@ -65,12 +67,16 @@ fn main() {
         Float(f64),
         Text(String),
     }
-
     let row = vec![
         SpreadsheetCell::Int(3),
         SpreadsheetCell::Text(String::from("blue")),
         SpreadsheetCell::Float(10.12),
     ];
+    // Getting specific varian value
+    match &row[1] {
+        &SpreadsheetCell::Int(i) => println!("{}", i),
+        _ => println!("Not a integer"),
+    }
 
 
     /// Storicng UTF-8 Encoded Text with String
@@ -115,22 +121,76 @@ fn main() {
     // let answer = &hellorus[0]; // this confussion maker ust don't support indexing
 
     /** 
-     * [224, 164, 168, 224, 164, 174, 224, 164, 184, 224, 165, 141, 
-     * 224, 164, 164, 224, 165, 135] <- string as a byte
-     * ['न', 'म', 'स', '्', 'त', 'े'] <- string as scalar values
-     * ["न", "म", "स्", "ते"] <- string as Grapheme Cluster
+     * Bytes
+     * [224, 164, 168, 224, 164, 174, 224, 164, 184, 224, 165, 141, 224, 164, 164, 224, 165, 135]
+     * Scalar Value
+     * ['न', 'म', 'स', '्', 'त', 'े']
+     * Grapheme Cluster
+     * ["न", "म", "स्", "ते"]
      */  let hellohindi = String::from("नमस्ते");
 
     // Slicing String
-        // let hellojapan = "おはようございます";
+        let hellojapan = String::from("おはようございます、昨夜");
         // let s = &hellojapan[0..4];
 
     // Methods for Iterating Over Strings
-    // using chars method to return scalar valus
-    for c in "नमस्ते".chars() {
+    for c in hellohindi.bytes() { // Bytes Value
         println!("{}", c);
-    }
-    for c in "नमस्ते".bytes() {
+    } 
+    for c in hellohindi.chars() { // Scalar Value
         println!("{}", c);
     } // scalar value provided in crates.io
+    for c in hellohindi.graphemes(true) {
+        println!("{}", c);
+    }
+
+    /// Hash Map
+    let mut scores = HashMap::new();
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
+    // Collect Method
+    let teams = vec![String::from("Blue"), String::from("Yellow")];
+    let initial_scores = vec![10, 50];
+    let mut scores1: HashMap<_, _> = 
+        teams.into_iter().zip(initial_scores.into_iter()).collect();
+    // Hash Maps and Ownership
+    let field_name = String::from("Favorite color");
+    let field_value = String::from("Blue");
+    let mut map = HashMap::new();
+    map.insert(field_name, field_value);
+    /** We can't use field value here */
+    // Accessing Values in Hash Map with get mehod
+    let team_name = String::from("Blue");
+    let score = scores.get(&team_name);
+    // for loop hashmap
+    for (key, value) in &scores {
+        println!("{}, {}", key, value);
+    }
+
+
+    // Updating hashmap
+    // Overwriting value
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Blue"), 25); // value above drop
+    println!("{:?}", scores);
+    // Only inserting a value if the key has no value
+    scores.entry(String::from("Yellow")).or_insert(50);
+    scores.entry(String::from("Blue")).or_insert(50);
+    // Updating Value Basen on the Old Value
+    let text = "hello world wonderful world";
+    let mut map1 = HashMap::new();
+    for word in text.split_whitespace() {
+        let count = map1.entry(word). or_insert(0); // or_insert return mutable reference of value (not key)
+        *count += 1;//dereference value and add hashmap value
+        println!("{:?}", map1);
+    }
+
+    // Biar paham
+    let mut mapcoba = HashMap::new();
+    let mut sanga = String::from("haha");
+    let coba = mapcoba.entry(sanga).or_insert(0);
+    *coba += 1;
+    *coba += 1;
+    println!("{:?}", coba);
+    println!("{:?}", mapcoba);
 }
