@@ -1,0 +1,15 @@
+[package]
+name = "Trait"
+version = "0.1.0"
+edition = "2018"
+
+[[bin]]
+name = "Trait"
+path = "src/main.rs"
+
+[lib]
+name = "aggregator"
+path = "src/lib.rs"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

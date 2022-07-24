@@ -1,6 +1,8 @@
 #[allow(non_snake_case)]
 #[allow(unused_variables)]
 #[allow(dead_code)]
+
+use std::cmp::PartialOrd;
 fn main() {
     let numberlist = vec![12, 117, 123, 213, 111, 91, 234];
     let charList = vec!['G', 'A', 'K', 'L', 'E', 'M'];
@@ -71,17 +73,17 @@ fn largest_char(list: &[char]) -> char {
     largest
 }
 
-// fn largestNew<T>(list: &[T]) -> T {
-//     let mut largest = list[0];
+fn largestNew<T: PartialOrd + Copy>(list: &[T]) -> T {
+    let mut largest = list[0];
 
-//     for &item in list {
-//         if item > largest {
-//             largest = item;
-//         }
-//     }
+    for &item in list {
+        if item > largest {
+            largest = item;
+        }
+    }
 
-//     largest
-// }
+    largest
+}
 
 // Generic Types in struct
 struct Point<T> {
