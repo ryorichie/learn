@@ -8,5 +8,14 @@ fn main() {
         retweet:false,
     };
 
+    let article = NewsArticle {
+        author: String::from("Ryo Richie"),
+        location: String::from("Japan"),
+        headline: String::from("I Believe I Can Fly"),
+        content: String::from("I Believe I can Touch The Sky"),
+    };
+
     println!("1 new tweet {}", tweet.summarize());
+
+    notify(&article);
 }
