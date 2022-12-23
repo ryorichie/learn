@@ -4,4 +4,3 @@ fn main() {
     let r = &x;
 
     println!("r: {}", r);
-}
