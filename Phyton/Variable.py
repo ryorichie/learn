@@ -19,7 +19,7 @@ height = 165.5
 print(type(height))
 print("My height as human is" + str(height))
 
-## booleam
+## Boolean
 alien = False
 print(type(alien))
-print("Am i human \n" + str(alien))
+print("Am i human ? \n" + str(alien))
