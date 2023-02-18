@@ -1,0 +1,5 @@
+num = input("Your number will become positive round: ")
+num = float(num)
+num = abs(num)
+num = round(num)
+print (num)

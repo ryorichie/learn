@@ -7,3 +7,6 @@ print(student.index("Male"))
 
 for x in student:
     print(x)
+
+if "Ryo" in student:
+    print("Ryo is here")
