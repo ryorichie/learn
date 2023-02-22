@@ -2,14 +2,16 @@ try:
     numerator = int(input("Enter a number to divide : "))
     denominator = int(input("Enter a number to divide by : "))
     result = numerator/denominator
-    print(result)
-except ZeroDivisionError as e:
-    print(e)
+except ZeroDivisionError as rror:
+    print(rror)
     print("Don't use zero")
-except ValueError as e:
-    print(e)
+except ValueError as rror:
+    print(rror)
     print("Just use numbers")
-except Exception as e:
-    print(e)
+except Exception as rror:
+    print(rror)
     print("something went wrong :(")
-
+else:
+    print(result) # only execute when there is no error
+finally:
+    print("This part will be always execute")
