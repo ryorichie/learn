@@ -17,11 +17,7 @@ print("I choose {} and you choose {}".format(Opponent, Myself))
 
 if Myself_int == Opponent_int :
     print("We are draw")
-elif Myself_int+2 == Opponent_int :
+elif Myself_int-2 == Opponent_int or Myself_int+1 == Opponent_int :
     print("You Lose")
-elif Myself_int+1 == Opponent_int :
-    print("You Lose")
-elif Myself_int-2 == Opponent_int :
-    print("You Win")
-elif Myself_int-1 == Opponent_int :
+else :
     print("You Win")
