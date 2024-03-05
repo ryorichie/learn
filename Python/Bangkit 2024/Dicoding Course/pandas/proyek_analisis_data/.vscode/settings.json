@@ -1,0 +1,8 @@
+{
+    "python.analysis.autoImportCompletions": false,
+    "python.autoComplete.extraPaths": [
+        
+    ],
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.extraPaths": []
+}
