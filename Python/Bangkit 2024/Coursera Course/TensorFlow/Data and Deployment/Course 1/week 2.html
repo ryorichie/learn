@@ -1,0 +1,52 @@
+<html>
+  <head></head>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
+  <script lang="js">
+    async function run() {
+        model = tf.sequential();
+
+        model.add(tf.layers.conv2d({
+            inputShape: [28, 28, 1],
+            kernelSize: 3,
+            filters: 8,
+            activation: 'relu'
+        }))
+        model.add(tf.layers.maxPooling2d({poolSize: [2,2]}))
+        model.add(tf.layers.conv2d({
+            kernelSize: 3,
+            filters: 16,
+            activation: 'relu'
+        }))
+        model.add(tf.layers.maxPooling2d({poolSize: [2,2]}))
+        model.add(tf.layers.flatten());
+        model.add(tf.layers.dense({
+            units: 128,
+            activation: 'relu'
+        }))
+        model.add(tf.layers.dense({
+            units: 10,
+            activation: 'softmax'
+        }))
+
+        model.compile({
+          optimizer: tf.train.adam(),
+          loss: 'categoricalCrossentropy',
+          metrics: ['accuracy']
+        })
+
+        model.fit(trainXs, trainYs, {
+          batchSize: BATCH_SIZE,
+          validationData: [testXs, testYs],
+          epochs: 20,
+          shuffle: true,
+          callbacks: fitCallbacks
+        })
+    }
+
+    run();
+  </script>
+  <body>
+    <h1>First HTML Page</h1>
+  </body>
+</html>
