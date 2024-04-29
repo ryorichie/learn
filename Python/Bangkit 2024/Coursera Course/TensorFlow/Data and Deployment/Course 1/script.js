@@ -1,4 +1,4 @@
-import {MnistData} from 'data.js';
+import {MnistData} from './data.js';
 var canvas, ctx, saveButton, clearButton;
 var pos = {x:0, y:0};
 var rawImage;
