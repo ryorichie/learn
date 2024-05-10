@@ -4,7 +4,7 @@ const webcam = new Webcam(document.getElementById('wc'));
 const dataset = new RPSDataset();
 var rockSamples = 0, paperSamples = 0, scissorsSamples = 0, spockSamples = 0, lizardSamples = 0;
 let isPredicting = false;
-
+tf.setBackend("cpu")
 async function loadMobilenet() {
   const mobilenet = await tf.loadLayersModel('https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_1.0_224/model.json');
   const layer = mobilenet.getLayer('conv_pw_13_relu');
