@@ -31,7 +31,7 @@ def scrape_page(i):
                     return scrape_content(link)
                 return title[1:-1], content[1:-1]
 
-            with concurrent.futures.ThreadPoolExecutor() as executor:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=15) as executor:
                 results = executor.map(scrape_content, href_links)
 
             all_title, all_content = zip(*results)
@@ -57,5 +57,5 @@ def scrape_page(i):
         json.dump(data, f, indent=4)
     print("Page {} done".format(i))
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-    executor.map(scrape_page, range(6755, 10000))
+with concurrent.futures.ThreadPoolExecutor(max_workers=12) as executor:
+    executor.map(scrape_page, range(10000, 10001))
