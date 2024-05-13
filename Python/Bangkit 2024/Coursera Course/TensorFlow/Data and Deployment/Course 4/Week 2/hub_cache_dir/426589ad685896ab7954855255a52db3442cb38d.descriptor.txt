@@ -1,0 +1,3 @@
+Module: https://tfhub.dev/google/tf2-preview/mobilenet_v2/classification/4
+Download Time: 2024-05-11 16:18:19.207972
+Downloader Hostname: DESKTOP-GUDVQH5 (PID:16708)
