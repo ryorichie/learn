@@ -67,11 +67,10 @@ valueAny = true;
 console.log(valueAny, typeof valueAny); // boolean
 valueAny = 42;
 console.log(valueAny, typeof valueAny); // number
-console.log(valueAny, typeof valueAny); // number
 valueAny = [];
-console.log(valueAny, typeof valueAny); // object
+console.log(valueAny, typeof valueAny); // empty array
 valueAny = {};
-console.log(valueAny, typeof valueAny); // object
+console.log(valueAny, typeof valueAny); // empty object
 valueAny = Math.random;
 console.log(valueAny, typeof valueAny); // function
 valueAny = null;
