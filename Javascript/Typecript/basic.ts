@@ -15,7 +15,7 @@ let progLang: string = "TypeScript";
 console.log(progLang, typeof progLang); // string
 
 // Array of String
-let university: string[] = ['UT', 'UGM', 'ITB'];
+let university: string[] = ["UT", "UGM", "ITB"];
 console.log(university, typeof university); // object
 
 // Tuple
@@ -29,7 +29,7 @@ enum Color {
   Blue, // Have same value with green
   Yellow, // Value is 4
   Green = 3,
-  Red = 3 * 3
+  Red = 3 * 3,
 }
 // {
 //   "2": "Black",
@@ -47,17 +47,17 @@ console.log(Color, typeof Color); // object
 
 // Union
 let code: string | number;
-code = 'my code';
+code = "my code";
 console.log(code, typeof code); // string
 code = 21;
 console.log(code, typeof code); // number
 
 // Null
-let valueNull = null
+let valueNull = null;
 console.log(valueNull, typeof valueNull); // object
 
 // Undefined
-let valueUndefined = undefined
+let valueUndefined = undefined;
 console.log(valueUndefined, typeof valueUndefined); // undefined
 
 // Any

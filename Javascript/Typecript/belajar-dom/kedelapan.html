@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Node Type Example</title>
+</head>
+<body>
+  <h1 id="heading">Node Type Example</h1>
+  <p id="paragraph">This is a paragraph of text.</p>
+  <div id="container">
+    <span id="span">This is a span of text.</span>
+    <img id="image" src="image.jpg" alt="An image">
+  </div>
+  <h2>Node Types:</h2>
+  <p>Heading node type: <span id="heading-node-type"></span></p>
+  <p>Paragraph node type: <span id="paragraph-node-type"></span></p>
+  <p>Paragraph text node type: <span id="paragraph-text-node-type"></span></p>
+  <p>Container node type: <span id="container-node-type"></span></p>
+  <p>Span node type: <span id="span-node-type"></span></p>
+  <p>Image node type: <span id="image-node-type"></span></p>
+  <p>Image attributes: <span id="image-attributes"></span></p>
+  <p>Comment node type: <span id="comment-node-type"></span></p>
+  <p>Document node type: <span id="document-node-type"></span></p>
+
+  <script>
+    // Get the heading element
+    var heading = document.getElementById("heading");
+    document.getElementById("heading-node-type").innerHTML = heading.nodeType;
+
+    // Get the paragraph element
+    var paragraph = document.getElementById("paragraph");
+    document.getElementById("paragraph-node-type").innerHTML = paragraph.nodeType;
+
+    // Get the text node inside the paragraph element
+    var paragraphText = paragraph.firstChild;
+    document.getElementById("paragraph-text-node-type").innerHTML = paragraphText.nodeType;
+
+    // Get the container element
+    var container = document.getElementById("container");
+    document.getElementById("container-node-type").innerHTML = container.nodeType;
+
+    // Get the span element inside the container element
+    var span = container.firstChild;
+    document.getElementById("span-node-type").innerHTML = span.nodeType;
+
+    // Get the image element inside the container element
+    var image = container.lastChild;
+    document.getElementById("image-node-type").innerHTML = image.nodeType;
+
+    // Get the attributes of the image element
+    var imageAttributes = image.attributes;
+    var attributesText = "";
+    for (var i = 0; i < imageAttributes.length; i++) {
+      attributesText += imageAttributes[i].name + " ";
+    }
+    document.getElementById("image-attributes").innerHTML = attributesText;
+
+    // Get the comment node
+    var comment = document.createComment("This is a comment");
+    document.getElementById("comment-node-type").innerHTML = comment.nodeType;
+
+    // Get the document node
+    var documentNode = document.documentElement;
+    document.getElementById("document-node-type").innerHTML = documentNode.nodeType;
+  </script>
+</body>
+</html>

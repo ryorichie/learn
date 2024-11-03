@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <h1 onclick="changeText(this)">Click on this text!</h1>
+        <h1 id="Button">Click this text too!</h1>
+        <h1 onmouseover="changeText(this)" onmouseout="changeTextAgain(this)">Hover me</h1>
+        <h1 id="Listenme">I will Listen</h1>
+        <script>
+            function changeText(element) {
+                element.innerHTML = "Hello World!";
+            }
+            function changeTextAgain(element) {
+                element.innerHTML = "Hello World Again!";
+            }
+
+            document.getElementById("Button").onclick = displayDate;
+            function displayDate() {
+                document.getElementById("Button").innerHTML = Date();
+            }
+            document.getElementById("Listenme").addEventListener("click", myFunction);
+            document.getElementById("Listenme").addEventListener("mouseover", mySecondFunction);
+            function myFunction() {
+                document.getElementById("Listenme").innerHTML = Date();
+            }
+            function mySecondFunction() {
+                document.getElementById("Listenme").innerHTML = "I listened";
+            }
+        </script>
+    </body>
+</html>

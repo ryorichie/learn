@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <p id="demo">Hello World</p>
+        <button type="button" onclick="
+            let currentColor = document.getElementById('demo').style.color;
+            if (currentColor === 'blue') {
+                document.getElementById('demo').style.color = 'red';
+            } else {
+                document.getElementById('demo').style.color = 'blue';
+            }
+        ">Click Me!</button>
+        <script>
+            document.getElementById("demo").style.color = "red";
+        </script>
+    </body>
+</html>

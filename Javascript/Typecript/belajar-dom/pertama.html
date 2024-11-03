@@ -1,0 +1,76 @@
+<html>
+    <body>
+        <p id="demo", class="demo"></p>
+        <script>
+            document.getElementById("demo").innerHTML = "Hello World!";
+        </script>
+    </body>
+</html>
+
+<script>
+    //1. getElementById
+    var x = document.getElementById("demo");
+    //2. getElementsByTagName
+    var y = document.getElementsByTagName("p");
+    //3. getElementsByClassName
+    var z = document.getElementsByClassName("demo");
+    //4. querySelector
+    var a = document.querySelector("p.demo");
+    //5. querySelectorAll
+    var b = document.querySelectorAll("p");
+</script>
+
+<script>
+    // 1. Change content using innerHTML
+    document.getElementById("demo").innerHTML = "New Content";
+
+    // 2. Change content using innerText
+    document.getElementById("demo").innerText = "New Text Content";
+
+    // 3. Change content using textContent
+    document.getElementById("demo").textContent = "Another New Content";
+
+    // 4. Change an attribute value
+    document.getElementById("demo").setAttribute("style", "color: blue;");
+</script>
+
+
+<script>
+    // Create a new HTML element
+    var newElement = document.createElement("div");
+    newElement.setAttribute("id", "demo2");
+    newElement.innerHTML = "This is a new div element";
+    document.body.appendChild(newElement);
+
+    // Remove an existing HTML element
+    var elementToRemove = document.getElementById("demo");
+    if (elementToRemove) {
+        elementToRemove.parentNode.removeChild(elementToRemove);
+    }
+
+    // Add a new HTML element as a child
+    var parentElement = document.body;
+    var childElement = document.createElement("button");
+    childElement.setAttribute("id", "demo3");
+    childElement.innerHTML = "This is a new button";
+    parentElement.appendChild(childElement);
+
+    // Replace an existing HTML element with a new one
+    var oldElement = document.getElementById("demo2");
+    var replacementElement = document.createElement("span");
+    replacementElement.innerHTML = "This is a replacement for demo";
+    if (oldElement) {
+        oldElement.parentNode.replaceChild(replacementElement, oldElement);
+    }
+
+    // Write directly to the HTML document
+    document.write(Date());
+    document.write("<h1>This is a heading</h1>");
+</script>
+
+<script>
+    // Event Handlerrs for Onclick Event
+    document.getElementById("demo3").onclick = function() {
+        alert("Hello World!");
+    }
+</script>

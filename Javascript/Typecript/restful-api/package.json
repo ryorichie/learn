@@ -1,0 +1,22 @@
+{
+  "name": "restful-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon dist/index.js",
+    "build:dev": "tsc --watch --preserveWatchOutput",
+    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "5.0.0",
+    "express": "5.0.1"
+  },
+  "dependencies": {
+    "concurrently": "9.0.1",
+    "nodemon": "3.1.7"
+  }
+}

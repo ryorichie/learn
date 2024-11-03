@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Rotating Donut</title>
+    <style>
+        body {
+            font-family: monospace;
+            white-space: pre;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="donut" width="1920" height="1080"></canvas>
+    <script>
+        let A = 0;
+        let B = 0;
+        const R1 = 150;
+        const R2 = 300;
+        const K1 = 150;
+        const K2 = 300;
+
+        const canvas = document.getElementById('donut');
+        const ctx = canvas.getContext('2d');
+
+        function renderFrame() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let j = 0; j < 6.28; j += 0.07) {
+                for (let i = 0; i < 6.28; i += 0.02) {
+                    let sini = Math.sin(i);
+                    let cosi = Math.cos(i);
+                    let cosj = Math.cos(j);
+                    let sinj = Math.sin(j);
+
+                    let circlex = R2 + R1 * cosi;
+                    let circley = R1 * sini;
+
+                    let x = circlex * (Math.cos(B) * cosj - Math.sin(A) * Math.sin(B) * sinj) - circley * Math.cos(A) * Math.sin(B);
+                    let y = circlex * (Math.sin(A) * cosj + Math.cos(A) * Math.sin(B) * sinj) + circley * Math.cos(A) * Math.cos(B);
+                    let z = K2 + Math.cos(A) * circlex * sinj + circley * Math.sin(A);
+
+                    let ooz = 1 / z;
+                    let xp = (canvas.width / 2 + K1 * ooz * x) | 0;
+                    let yp = (canvas.height / 2 + K1 * ooz * y) | 0;
+
+                    ctx.fillStyle = 'rgba(255, 255, 255, ' + (Math.cos(j) * Math.cos(i) * Math.sin(B) + Math.cos(A) * Math.cos(i) * Math.sin(j) - Math.sin(A) * Math.sin(i) + Math.cos(B) * (Math.cos(A) * Math.sin(i) + Math.cos(i) * Math.sin(A) * Math.sin(j))) + ')';
+                    ctx.fillRect(xp, yp, 2, 2);
+                }
+            }
+
+            A += 0.01;
+            B += 0.03;
+        }
+
+        function animate() {
+            renderFrame();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
+

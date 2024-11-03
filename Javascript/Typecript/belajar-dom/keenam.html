@@ -1,0 +1,64 @@
+<!-- Event bubbling and event capturing are two models of event propagation in HTML DOM. 
+
+Event Capturing: 
+In this model, an event is first captured by the outermost element and then propagated to the innermost element. 
+
+Event Bubbling: 
+In this model, an event is first captured by the innermost element and then propagated to the outermost element. 
+
+Now, if we attach an event handler to both the parent and child div for the same event (let's say, a click event), and then trigger that event on the child div, the order of event propagation will be different for event bubbling and event capturing. 
+
+For event bubbling, the event will first be captured by the child div and then propagated to the parent div. 
+
+For event capturing, the event will first be captured by the parent div and then propagated to the child div. -->
+
+<html>
+    <body>
+        <h1>Event capturing</h1>
+        <div id="myDiv1">
+            parent
+            <div id="myP1">
+                child
+            </div>
+        </div>
+        <br>
+        <h1>Event bubbling</h1>
+        <div id="myDiv2">
+            parent
+            <div id="myP2">
+                child
+            </div>
+        </div>
+    </body>
+    <style>
+        #myDiv1, #myDiv2 {
+            background-color: blue;
+            padding: 75px;
+        }
+
+        #myP1, #myP2 {
+            background-color: green;
+            padding: 25px;
+            border: 1px solid black;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+       
+        document.getElementById('myDiv1').addEventListener('click', function(event) {
+            alert("Blue Part");
+        }, true);
+        
+        document.getElementById('myDiv2').addEventListener('click', function(event) {
+            alert("Blue Part");
+        }, false);
+        
+        document.getElementById('myP1').addEventListener('click', function(event) {
+            alert("Green Part");
+        }, true);
+        
+        document.getElementById('myP2').addEventListener('click', function(event) {
+            alert("Green Part");
+        }, false);
+    </script>
+</html>

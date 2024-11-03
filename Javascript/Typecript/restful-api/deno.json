@@ -1,0 +1,17 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net --allow-read --watch --unstable-sloppy-imports src/index.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^1.0.6",
+    "express": "npm:express@5.0.1"
+  },
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
+  }
+}

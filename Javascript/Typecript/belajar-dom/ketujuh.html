@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learning HTML DOM Navigation</title>
+    </head>
+    <body>
+        <h1>Learning HTML DOM Navigation</h1>
+        <div id="parent">
+            Parent Node
+            <ul id="child">
+                <li>Child Node 1</li>
+                <li>Child Node 2</li>
+                <li>Child Node 3</li>
+            </ul>
+        </div>
+        <script>
+            // Get the parent node
+            var parentNode = document.getElementById("parent");
+
+            // Get the child ul element
+            var childUl = document.getElementById("child");
+
+            // Get the first child node of the ul
+            var firstChild = childUl.firstElementChild;
+            console.log(firstChild); // <li>Child Node 1</li>
+
+            // Get the last child node of the ul
+            var lastChild = childUl.lastElementChild;
+            console.log(lastChild); // <li>Child Node 3</li>
+
+            // Get the next sibling node
+            var nextSibling = firstChild.nextElementSibling;
+            console.log(nextSibling); // <li>Child Node 2</li>
+
+            // Get the previous sibling node
+            var previousSibling = lastChild.previousElementSibling;
+            console.log(previousSibling); // <li>Child Node 2</li>
+
+            // Get the parent node of the ul element
+            var parentOfUl = childUl.parentNode;
+            console.log(parentOfUl); // <div id="parent">Parent Node</div>
+        </script>
+    </body>
+</html>
