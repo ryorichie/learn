@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Crypto Prices</string>
+    <string name="title_activity_main">Crypto Prices</string>
+    <string name="package_name">com.cryptoprices.app</string>
+    <string name="custom_url_scheme">com.cryptoprices.app</string>
+</resources>

@@ -1,4 +1,4 @@
-const NIM = '044213394';
+const NIM = '044213320';
 const startNumber = +NIM.slice(-2);
 
 if (startNumber <= 20) {
